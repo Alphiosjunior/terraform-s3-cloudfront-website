@@ -45,8 +45,8 @@ jobs:
       - name: 📤 Get Outputs
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-          echo "CloudFront URL: $(terraform output -raw cloudfront_domain_name)"
-          echo "S3 Bucket: $(terraform output -raw s3_bucket_name)"
+          terraform output cloudfront_domain_name
+          terraform output s3_bucket_name
 
       - name: ✅ Deployment Complete
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
