@@ -146,6 +146,40 @@ terraform destroy
 - ✅ No sensitive data in public repositories
 - ✅ Proper IAM permissions for Terraform user
 
+## 🚀 CI/CD Pipeline
+
+### Automated Deployment with GitHub Actions
+
+Every push to `main` branch automatically:
+
+1. ✅ Runs Terraform plan
+2. ✅ Deploys infrastructure
+3. ✅ Outputs CloudFront URL
+
+### How It Works:
+
+**Workflow File**: `.github/workflows/deploy.yml`
+
+```
+Developer Push
+    ↓
+GitHub Actions Triggered
+    ↓
+Terraform Init
+    ↓
+Terraform Apply
+    ↓
+Infrastructure Deployed
+    ↓
+Website Live ✅
+```
+
+### Current Live Website:
+
+**URL**: https://dtlieoihekups.cloudfront.net
+
+**Last Deployed**: [Date]
+
 ## 🔄 Reproducibility
 
 Anyone can recreate this infrastructure by:
